@@ -34,8 +34,9 @@
 
             <TextView
                 android:id="@+id/emailadpt"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:autoLink="web|email"
                 android:text="email" />
 
         </LinearLayout>

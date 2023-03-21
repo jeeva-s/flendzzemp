@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Map;
 
 public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHolder> {
@@ -37,16 +38,18 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         EmployeeModel courses = coursesArrayList.get(position);
-        holder.name.setText(courses.getName());
+        String camelCase=UpperCamel.convertString(courses.getName());
+        holder.name.setText(camelCase);
         holder.email.setText(courses.getEmail());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(context,EmployeeDetails.class);
                 intent.putExtra("name",courses.getName().toString());
-                intent.putExtra("email",courses.getEmail().toString());
+                intent.putExtra("email",courses.getEmail().toString().toLowerCase(Locale.ROOT));
                 intent.putExtra("id",String.valueOf(courses.getId()));
                 intent.putExtra("phone",courses.getPhone().toString());
+                intent.putExtra("website",courses.getWebsite().toString());
                 Map<String,Object> address=courses.getAddress();
                 intent.putExtra("address",address.get("street").toString());
                 Map<String,Object> cAdd=courses.getCompanyAddress();
