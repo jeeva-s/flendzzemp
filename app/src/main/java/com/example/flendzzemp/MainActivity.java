@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     List<EmployeeModel> employeeModels=new ArrayList<>();
-    private CourseRVAdapter courseRVAdapter;
+    private EmployeeAdapter courseRVAdapter;
     RecyclerView recyclerView;
 
     @Override
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
                     // adding our array list to our recycler view adapter class.
-                    courseRVAdapter = new CourseRVAdapter((ArrayList<EmployeeModel>) employeeModels, MainActivity.this);
+                    courseRVAdapter = new EmployeeAdapter((ArrayList<EmployeeModel>) employeeModels, MainActivity.this);
 
                     // setting adapter to our recycler view.
                     recyclerView.setAdapter(courseRVAdapter);

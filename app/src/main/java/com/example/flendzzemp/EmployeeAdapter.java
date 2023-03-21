@@ -2,11 +2,9 @@ package com.example.flendzzemp;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,20 +12,16 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.gson.Gson;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.Map;
 
-public class CourseRVAdapter extends RecyclerView.Adapter<CourseRVAdapter.ViewHolder> {
+public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHolder> {
     // creating variables for our ArrayList and context
     private ArrayList<EmployeeModel> coursesArrayList;
     private Context context;
 
     // creating constructor for our adapter class
-    public CourseRVAdapter(ArrayList<EmployeeModel> coursesArrayList, Context context) {
+    public EmployeeAdapter(ArrayList<EmployeeModel> coursesArrayList, Context context) {
         this.coursesArrayList = coursesArrayList;
         this.context = context;
     }
