@@ -26,13 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView=findViewById(R.id.recycle);
-
         getData();
-
-
-
-
-
     }
 
     private void getData() {
@@ -51,12 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
                     recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
-                    // adding our array list to our recycler view adapter class.
                     courseRVAdapter = new EmployeeAdapter((ArrayList<EmployeeModel>) employeeModels, MainActivity.this);
 
-                    // setting adapter to our recycler view.
+
                     recyclerView.setAdapter(courseRVAdapter);
-                    Toast.makeText(MainActivity.this, ""+response.code(), Toast.LENGTH_SHORT).show();
+
                 }
             }
 

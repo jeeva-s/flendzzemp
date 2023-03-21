@@ -52,7 +52,7 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
                 Map<String,Object> address=courses.getAddress();
                 intent.putExtra("address",address.get("street").toString());
                 Map<String,Object> cAdd=courses.getCompanyAddress();
-                Toast.makeText(context, ""+cAdd.get("name"), Toast.LENGTH_SHORT).show();
+
                 intent.putExtra("companyAddress",cAdd.get("name").toString());
 
                 context.startActivity(intent);
