@@ -5,8 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.Map;
 
 public class EmployeeModel {
-    @SerializedName("body")
-    int id;
+
+    String id;
     String name;
     String email;
     Map<String,Object> address;
@@ -14,7 +14,7 @@ public class EmployeeModel {
     String website;
     Map<String,Object> company;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

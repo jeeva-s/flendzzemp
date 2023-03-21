@@ -42,12 +42,10 @@ public class EmployeeAdapter extends RecyclerView.Adapter<EmployeeAdapter.ViewHo
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 Intent intent=new Intent(context,EmployeeDetails.class);
                 intent.putExtra("name",courses.getName().toString());
                 intent.putExtra("email",courses.getEmail().toString());
-                intent.putExtra("id",courses.getId());
+                intent.putExtra("id",String.valueOf(courses.getId()));
                 intent.putExtra("phone",courses.getPhone().toString());
                 Map<String,Object> address=courses.getAddress();
                 intent.putExtra("address",address.get("street").toString());
